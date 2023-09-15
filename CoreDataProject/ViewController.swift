@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     }
     
     private func setupUI() {
+        view.backgroundColor = .white
         view.addSubview(profileButton)
         profileButton.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
     
     @objc func profileButtonTapped() {
         let profileDesignViewController = ProfileDesignViewController()
+        profileDesignViewController.modalPresentationStyle = .fullScreen
         self.present(profileDesignViewController, animated: true)
     }
     
