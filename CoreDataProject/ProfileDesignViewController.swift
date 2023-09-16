@@ -228,7 +228,7 @@ class ProfileDesignViewController: UIViewController {
     private lazy var activityStackView: UIStackView = {
         let stview = UIStackView(arrangedSubviews: [followButton, messageButton, moreButton])
         stview.axis = .horizontal
-        stview.distribution = .fillEqually
+        stview.distribution = .fillProportionally
         stview.spacing = 8
         return stview
     }()
@@ -320,6 +320,15 @@ class ProfileDesignViewController: UIViewController {
             make.width.equalTo(21)
         }
         
+        // 더보기 버튼
+        moreButton.snp.makeConstraints { make in
+            make.width.height.equalTo(30)
+        }
+        
+        // 팔로우 버튼
+        followButton.snp.makeConstraints { make in
+            make.width.equalTo(messageButton)
+        }
         //        // space
         //        space1.snp.makeConstraints { make in
         //            make.width.equalTo(0)
