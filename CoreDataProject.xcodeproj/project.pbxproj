@@ -16,6 +16,8 @@
 		DF8EC3082AB2EF7700B53EAF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DF8EC3072AB2EF7700B53EAF /* SnapKit */; };
 		DF8EC30B2AB2EF8300B53EAF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DF8EC30A2AB2EF8300B53EAF /* Alamofire */; };
 		DF8EC30F2AB3066E00B53EAF /* ProfileDesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EC30E2AB3066E00B53EAF /* ProfileDesignViewController.swift */; };
+		DFA3B3A22AB969D800FA0373 /* CustomImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3B3A12AB969D800FA0373 /* CustomImageCollectionViewCell.swift */; };
+		DFA3B3A42AB96A3A00FA0373 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3B3A32AB96A3A00FA0373 /* ImageModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		DF8EC2FD2AB2DF7100B53EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF8EC2FF2AB2DF7100B53EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF8EC30E2AB3066E00B53EAF /* ProfileDesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDesignViewController.swift; sourceTree = "<group>"; };
+		DFA3B3A12AB969D800FA0373 /* CustomImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		DFA3B3A32AB96A3A00FA0373 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 				DF8EC2F02AB2DF7000B53EAF /* SceneDelegate.swift */,
 				DF8EC2F22AB2DF7000B53EAF /* ViewController.swift */,
 				DF8EC30E2AB3066E00B53EAF /* ProfileDesignViewController.swift */,
+				DFA3B3A12AB969D800FA0373 /* CustomImageCollectionViewCell.swift */,
+				DFA3B3A32AB96A3A00FA0373 /* ImageModel.swift */,
 				DF8EC2FA2AB2DF7100B53EAF /* Assets.xcassets */,
 				DF8EC2FC2AB2DF7100B53EAF /* LaunchScreen.storyboard */,
 				DF8EC2FF2AB2DF7100B53EAF /* Info.plist */,
@@ -161,10 +167,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF8EC2F32AB2DF7000B53EAF /* ViewController.swift in Sources */,
+				DFA3B3A22AB969D800FA0373 /* CustomImageCollectionViewCell.swift in Sources */,
 				DF8EC2EF2AB2DF7000B53EAF /* AppDelegate.swift in Sources */,
 				DF8EC2F92AB2DF7000B53EAF /* CoreDataProject.xcdatamodeld in Sources */,
 				DF8EC2F12AB2DF7000B53EAF /* SceneDelegate.swift in Sources */,
 				DF8EC30F2AB3066E00B53EAF /* ProfileDesignViewController.swift in Sources */,
+				DFA3B3A42AB96A3A00FA0373 /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

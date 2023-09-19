@@ -169,6 +169,67 @@ class ProfileDesignViewController: UIViewController {
         return button
     }()
     
+    // 내비게이션 바
+    // 내비게이션 바탕뷰
+    private lazy var navBarView: UIView = {
+       let view = UIView()
+        view.backgroundColor = .clear
+       return view
+    }()
+    
+    // 구분선
+    private lazy var divideLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = .gray
+        return view
+    }()
+    
+    // 격자 아이콘
+    private lazy var gridButtonImage: UIImageView = {
+        let view = UIImageView()
+        let image = UIImage(named: "Grid.png")
+        view.image = image
+        return view
+    }()
+    
+    // 버튼 밑줄
+    private lazy var highlightLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        return view
+    }()
+    
+    // 컬렉션 뷰
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 2 // 수직 간격
+        layout.minimumInteritemSpacing = -8 // 수평 간격
+        let itemWidth = (view.frame.width - 2 * layout.minimumInteritemSpacing - 20) / 3 // 3 x 3 그리드로 조절
+        layout.itemSize = CGSize(width: itemWidth, height: itemWidth) // 아이템 크기 설정
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        return collectionView
+    }()
+
+    // 탭 바
+    private lazy var tabBarView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
+    
+    // 사람 아이콘
+    private lazy var humanIcon: UIImageView = {
+        let imageView = UIImageView()
+        let image = UIImage(systemName: "person.fill")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        imageView.image = image
+        return imageView
+    }()
+    
     // MARK: - 스택 뷰
     
     // 이름 메뉴바 스택뷰
@@ -253,16 +314,29 @@ class ProfileDesignViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+        
+        collectionView.register(CustomImageCollectionViewCell.self, forCellWithReuseIdentifier: "CustomImageCollectionViewCell")
+
     }
     
     // MARK: - UI AutoLayout 설정
     private func setupUI() {
+
+        
         view.addSubview(profileView)
         profileView.addSubview(barStackView)
         profileView.addSubview(profileImageView)
         profileView.addSubview(userFollowInfoStackView)
         profileView.addSubview(userInfoStackView)
         profileView.addSubview(activityStackView)
+        profileView.addSubview(navBarView)
+        navBarView.addSubview(divideLine)
+        navBarView.addSubview(gridButtonImage)
+        navBarView.addSubview(highlightLine)
+        profileView.addSubview(collectionView)
+        profileView.addSubview(tabBarView)
+        tabBarView.addSubview(humanIcon)
+        
         
         // 바탕 뷰
         profileView.snp.makeConstraints { make in
@@ -305,15 +379,49 @@ class ProfileDesignViewController: UIViewController {
             make.left.equalTo(14)
         }
         
-
+        // 내비게이션 바탕 뷰
+        navBarView.snp.makeConstraints { make in
+            make.top.equalTo(activityStackView.snp.bottom).offset(10)
+            make.height.equalTo(40)
+            make.left.right.equalToSuperview()
+        }
         
-
+        divideLine.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.height.equalTo(1)
+            make.left.right.equalToSuperview()
+        }
         
+        gridButtonImage.snp.makeConstraints { make in
+            make.bottom.equalTo(highlightLine.snp.top).offset(-8)
+            make.height.width.equalTo(22.5)
+            make.centerX.equalTo(highlightLine)
+        }
         
+        highlightLine.snp.makeConstraints { make in
+            make.bottom.equalTo(navBarView.snp.bottom).offset(1)
+            make.height.equalTo(1)
+            make.width.equalTo(140)
+            make.left.equalToSuperview().dividedBy(3)
+        }
         
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(navBarView.snp.bottom).offset(3)
+            make.left.right.equalToSuperview()
+            make.bottom.equalTo(tabBarView.snp.top)
+        }
         
+        tabBarView.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().offset(10)
+            make.height.equalTo(85)
+            make.left.right.equalToSuperview()
+        }
         
-        
+        humanIcon.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(tabBarView.snp.top).offset(19)
+            make.width.height.equalTo(25)
+        }
         
         // 메뉴 버튼 뷰
         menuButton.snp.makeConstraints { make in
@@ -339,6 +447,32 @@ class ProfileDesignViewController: UIViewController {
     }
     
 }
+
+// 데이터 소스 및 델리게이트 메서드 구현
+extension ProfileDesignViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    // 데이터 소스 및 델리게이트 메서드 구현
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // 섹션별 아이템 수 반환
+        print(imageModels.count)
+        return imageModels.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // 커스텀 셀을 dequeueReusableCell 메서드로 가져옵니다.
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomImageCollectionViewCell", for: indexPath) as? CustomImageCollectionViewCell else {
+            fatalError("커스텀 셀을 재사용할 수 없습니다.")
+        }
+        
+        let imageName = imageModels[indexPath.item].imageName
+        cell.setImage(UIImage(named: imageName))
+        
+        return cell
+    }
+}
+
+
+
+
 
 // MARK: - SwiftUI를 활용한 미리보기
 struct ProfileDesignViewControllerPreviews: PreviewProvider {
