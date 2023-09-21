@@ -18,6 +18,7 @@
 		DF8EC30F2AB3066E00B53EAF /* ProfileDesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EC30E2AB3066E00B53EAF /* ProfileDesignViewController.swift */; };
 		DFA3B3A22AB969D800FA0373 /* CustomImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3B3A12AB969D800FA0373 /* CustomImageCollectionViewCell.swift */; };
 		DFA3B3A42AB96A3A00FA0373 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3B3A32AB96A3A00FA0373 /* ImageModel.swift */; };
+		DFA3B3A62ABAE71B00FA0373 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA3B3A52ABAE71B00FA0373 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		DF8EC30E2AB3066E00B53EAF /* ProfileDesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDesignViewController.swift; sourceTree = "<group>"; };
 		DFA3B3A12AB969D800FA0373 /* CustomImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		DFA3B3A32AB96A3A00FA0373 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		DFA3B3A52ABAE71B00FA0373 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				DF8EC2F22AB2DF7000B53EAF /* ViewController.swift */,
 				DF8EC30E2AB3066E00B53EAF /* ProfileDesignViewController.swift */,
 				DFA3B3A12AB969D800FA0373 /* CustomImageCollectionViewCell.swift */,
+				DFA3B3A52ABAE71B00FA0373 /* ProfileViewController.swift */,
 				DFA3B3A32AB96A3A00FA0373 /* ImageModel.swift */,
 				DF8EC2FA2AB2DF7100B53EAF /* Assets.xcassets */,
 				DF8EC2FC2AB2DF7100B53EAF /* LaunchScreen.storyboard */,
@@ -172,6 +175,7 @@
 				DF8EC2F92AB2DF7000B53EAF /* CoreDataProject.xcdatamodeld in Sources */,
 				DF8EC2F12AB2DF7000B53EAF /* SceneDelegate.swift in Sources */,
 				DF8EC30F2AB3066E00B53EAF /* ProfileDesignViewController.swift in Sources */,
+				DFA3B3A62ABAE71B00FA0373 /* ProfileViewController.swift in Sources */,
 				DFA3B3A42AB96A3A00FA0373 /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
