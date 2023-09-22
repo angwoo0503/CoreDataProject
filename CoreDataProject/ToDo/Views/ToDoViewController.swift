@@ -33,10 +33,10 @@ class ToDoViewController: UIViewController {
     }
 
     func setupNavigationBar() {
-        // 네비게이션 바에 "Add" 버튼 추가
+
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         
-        // 네비게이션 바에 "Edit" 버튼 추가
+
         let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editButtonTapped))
         
         navigationItem.rightBarButtonItems = [addButton, editButton]
@@ -56,20 +56,20 @@ class ToDoViewController: UIViewController {
     }
 
     @objc func addButtonTapped() {
-        let alertController = UIAlertController(title: "Add Task", message: nil, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "할 일 추가하기", message: nil, preferredStyle: .alert)
 
         alertController.addTextField { textField in
-            textField.placeholder = "Task Title"
+            textField.placeholder = "할 일"
         }
 
-        let addAction = UIAlertAction(title: "Add", style: .default) { [weak self] _ in
+        let addAction = UIAlertAction(title: "추가", style: .default) { [weak self] _ in
             if let textField = alertController.textFields?.first, let title = textField.text, !title.isEmpty {
                 self?.viewModel.createTask(title: title)
                 self?.tableView.reloadData()
             }
         }
 
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
 
         alertController.addAction(addAction)
         alertController.addAction(cancelAction)
@@ -92,10 +92,17 @@ extension ToDoViewController: UITableViewDataSource, UITableViewDelegate {
 
         let task = viewModel.tasks[indexPath.row]
 
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy년 MM월 dd일 HH시 mm분 ss초"
+
+        if let date = task.modifyDate {
+            let formattedDate = dateFormatter.string(from: date)
+            cell.configure(with: task.title ?? "", date: formattedDate, isCompleted: task.isCompleted)
+        } else {
+            cell.configure(with: task.title ?? "", date: "", isCompleted: task.isCompleted)
+        }
 
         cell.toggleSwitch.isOn = task.isCompleted
-
-        cell.configure(with: task.title ?? "", date: "\(task.modifyDate ?? Date())", isCompleted: task.isCompleted)
 
         cell.toggleSwitch.addTarget(self, action: #selector(toggleSwitchChanged(sender:)), for: .valueChanged)
 
@@ -112,21 +119,21 @@ extension ToDoViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let alertController = UIAlertController(title: "Edit Task", message: nil, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "할 일 수정", message: nil, preferredStyle: .alert)
 
         alertController.addTextField { [weak self] textField in
-            textField.placeholder = "Task Title"
+            textField.placeholder = "할 일"
             textField.text = self?.viewModel.tasks[indexPath.row].title
         }
 
-        let editAction = UIAlertAction(title: "Edit", style: .default) { [weak self] _ in
+        let editAction = UIAlertAction(title: "수정", style: .default) { [weak self] _ in
             if let textField = alertController.textFields?.first, let title = textField.text, !title.isEmpty {
                 self?.viewModel.updateTask(at: indexPath.row, withTitle: title)
                 tableView.reloadData()
             }
         }
 
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
 
         alertController.addAction(editAction)
         alertController.addAction(cancelAction)

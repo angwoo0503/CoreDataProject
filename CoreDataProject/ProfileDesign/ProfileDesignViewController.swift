@@ -456,15 +456,12 @@ class ProfileDesignViewController: UIViewController {
 
 // 데이터 소스 및 델리게이트 메서드 구현
 extension ProfileDesignViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    // 데이터 소스 및 델리게이트 메서드 구현
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // 섹션별 아이템 수 반환
         print(imageModels.count)
         return imageModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // 커스텀 셀을 dequeueReusableCell 메서드로 가져옵니다.
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomImageCollectionViewCell", for: indexPath) as? CustomImageCollectionViewCell else {
             fatalError("커스텀 셀을 재사용할 수 없습니다.")
         }
