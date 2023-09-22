@@ -3,6 +3,8 @@ import SwiftUI
 import SnapKit
 
 class ToDoViewController: UIViewController {
+    private let taskManager = TaskManager.shared
+    
     private lazy var contentView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -17,7 +19,7 @@ class ToDoViewController: UIViewController {
         return tableView
     }()
 
-    private let viewModel = ToDoListViewModel() // 뷰 모델 생성
+    private let viewModel = ToDoListViewModel() 
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,9 +92,23 @@ extension ToDoViewController: UITableViewDataSource, UITableViewDelegate {
 
         let task = viewModel.tasks[indexPath.row]
 
+
+        cell.toggleSwitch.isOn = task.isCompleted
+
         cell.configure(with: task.title ?? "", date: "\(task.modifyDate ?? Date())", isCompleted: task.isCompleted)
 
+        cell.toggleSwitch.addTarget(self, action: #selector(toggleSwitchChanged(sender:)), for: .valueChanged)
+
         return cell
+    }
+    
+    @objc func toggleSwitchChanged(sender: UISwitch) {
+
+        if let cell = sender.superview?.superview as? ToDoTableViewCell, let indexPath = tableView.indexPath(for: cell) {
+            let task = viewModel.tasks[indexPath.row]
+            task.isCompleted = sender.isOn
+            taskManager.updateTask(task: task, withTitle: task.title ?? "")
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -124,6 +140,8 @@ extension ToDoViewController: UITableViewDataSource, UITableViewDelegate {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
+    
 }
 
 struct ToDoViewControllerPreviews: PreviewProvider {
