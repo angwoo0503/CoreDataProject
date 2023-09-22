@@ -51,7 +51,7 @@ class ToDoTableViewCell: UITableViewCell {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:)가 구현되지 않음")
+        fatalError("init(coder:)가 구현되지 않음.")
     }
     
 
