@@ -62,7 +62,13 @@ class ViewController: UIViewController {
     }
     
     @objc func profileButtonTapped() {
-        let profileViewController = ProfileViewController()
+
+        let user = User(userName: "박상우", userAge: 25)
+        
+        let viewModel = ProfileViewModel(user: user)
+        
+        let profileViewController = ProfileViewController(viewModel: viewModel)
+        
         navigationController?.pushViewController(profileViewController, animated: true)
     }
     

@@ -11,6 +11,8 @@
 		DF881D0A2ABCD4A300B5406C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF881D092ABCD4A300B5406C /* Task.swift */; };
 		DF881D0C2ABCD79500B5406C /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF881D0B2ABCD79500B5406C /* TaskManager.swift */; };
 		DF881D0F2ABCDA8A00B5406C /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF881D0E2ABCDA8A00B5406C /* ToDoTableViewCell.swift */; };
+		DF881D142ABD754300B5406C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF881D132ABD754300B5406C /* User.swift */; };
+		DF881D162ABD823F00B5406C /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF881D152ABD823F00B5406C /* ProfileViewModel.swift */; };
 		DF8EC2EF2AB2DF7000B53EAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EC2EE2AB2DF7000B53EAF /* AppDelegate.swift */; };
 		DF8EC2F12AB2DF7000B53EAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EC2F02AB2DF7000B53EAF /* SceneDelegate.swift */; };
 		DF8EC2F32AB2DF7000B53EAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EC2F22AB2DF7000B53EAF /* ViewController.swift */; };
@@ -30,6 +32,8 @@
 		DF881D092ABCD4A300B5406C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		DF881D0B2ABCD79500B5406C /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 		DF881D0E2ABCDA8A00B5406C /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
+		DF881D132ABD754300B5406C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DF881D152ABD823F00B5406C /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		DF8EC2EB2AB2DF7000B53EAF /* CoreDataProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8EC2EE2AB2DF7000B53EAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF8EC2F02AB2DF7000B53EAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 		DF881D102ABCFF3900B5406C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DF881D132ABD754300B5406C /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 		DF881D122ABCFF4700B5406C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				DF881D152ABD823F00B5406C /* ProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -261,11 +267,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF881D142ABD754300B5406C /* User.swift in Sources */,
 				DF8EC2F32AB2DF7000B53EAF /* ViewController.swift in Sources */,
 				DFA3B3A22AB969D800FA0373 /* CustomImageCollectionViewCell.swift in Sources */,
 				DF8EC2EF2AB2DF7000B53EAF /* AppDelegate.swift in Sources */,
 				DF881D0F2ABCDA8A00B5406C /* ToDoTableViewCell.swift in Sources */,
 				DF881D0C2ABCD79500B5406C /* TaskManager.swift in Sources */,
+				DF881D162ABD823F00B5406C /* ProfileViewModel.swift in Sources */,
 				DF8EC2F92AB2DF7000B53EAF /* CoreDataProject.xcdatamodeld in Sources */,
 				DF881D082ABCD1FF00B5406C /* ToDoViewController.swift in Sources */,
 				DF881D0A2ABCD4A300B5406C /* Task.swift in Sources */,
