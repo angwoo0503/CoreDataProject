@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF881D082ABCD1FF00B5406C /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF881D072ABCD1FF00B5406C /* ToDoViewController.swift */; };
+		DF881D0A2ABCD4A300B5406C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF881D092ABCD4A300B5406C /* Task.swift */; };
+		DF881D0C2ABCD79500B5406C /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF881D0B2ABCD79500B5406C /* TaskManager.swift */; };
+		DF881D0F2ABCDA8A00B5406C /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF881D0E2ABCDA8A00B5406C /* ToDoTableViewCell.swift */; };
 		DF8EC2EF2AB2DF7000B53EAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EC2EE2AB2DF7000B53EAF /* AppDelegate.swift */; };
 		DF8EC2F12AB2DF7000B53EAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EC2F02AB2DF7000B53EAF /* SceneDelegate.swift */; };
 		DF8EC2F32AB2DF7000B53EAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EC2F22AB2DF7000B53EAF /* ViewController.swift */; };
@@ -22,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF881D072ABCD1FF00B5406C /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		DF881D092ABCD4A300B5406C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		DF881D0B2ABCD79500B5406C /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
+		DF881D0E2ABCDA8A00B5406C /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		DF8EC2EB2AB2DF7000B53EAF /* CoreDataProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8EC2EE2AB2DF7000B53EAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF8EC2F02AB2DF7000B53EAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +57,91 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF881D002ABCA9C700B5406C /* ProfileDesign */ = {
+			isa = PBXGroup;
+			children = (
+				DF8EC30E2AB3066E00B53EAF /* ProfileDesignViewController.swift */,
+				DFA3B3A32AB96A3A00FA0373 /* ImageModel.swift */,
+				DFA3B3A12AB969D800FA0373 /* CustomImageCollectionViewCell.swift */,
+			);
+			path = ProfileDesign;
+			sourceTree = "<group>";
+		};
+		DF881D012ABCA9D700B5406C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DF881D122ABCFF4700B5406C /* ViewModels */,
+				DF881D112ABCFF4200B5406C /* Views */,
+				DF881D102ABCFF3900B5406C /* Models */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		DF881D022ABCAA6700B5406C /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+				DF881D052ABCAA9500B5406C /* ViewModels */,
+				DF881D042ABCAA8B00B5406C /* Models */,
+				DF881D032ABCAA8000B5406C /* Views */,
+			);
+			path = ToDo;
+			sourceTree = "<group>";
+		};
+		DF881D032ABCAA8000B5406C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DF881D0D2ABCD9F800B5406C /* Cell */,
+				DF881D072ABCD1FF00B5406C /* ToDoViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DF881D042ABCAA8B00B5406C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DF881D092ABCD4A300B5406C /* Task.swift */,
+				DF881D0B2ABCD79500B5406C /* TaskManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DF881D052ABCAA9500B5406C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DF881D0D2ABCD9F800B5406C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DF881D0E2ABCDA8A00B5406C /* ToDoTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DF881D102ABCFF3900B5406C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DF881D112ABCFF4200B5406C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DFA3B3A52ABAE71B00FA0373 /* ProfileViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DF881D122ABCFF4700B5406C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		DF8EC2E22AB2DF7000B53EAF = {
 			isa = PBXGroup;
 			children = (
@@ -69,13 +162,12 @@
 		DF8EC2ED2AB2DF7000B53EAF /* CoreDataProject */ = {
 			isa = PBXGroup;
 			children = (
+				DF881D022ABCAA6700B5406C /* ToDo */,
+				DF881D012ABCA9D700B5406C /* Profile */,
+				DF881D002ABCA9C700B5406C /* ProfileDesign */,
 				DF8EC2EE2AB2DF7000B53EAF /* AppDelegate.swift */,
 				DF8EC2F02AB2DF7000B53EAF /* SceneDelegate.swift */,
 				DF8EC2F22AB2DF7000B53EAF /* ViewController.swift */,
-				DF8EC30E2AB3066E00B53EAF /* ProfileDesignViewController.swift */,
-				DFA3B3A12AB969D800FA0373 /* CustomImageCollectionViewCell.swift */,
-				DFA3B3A52ABAE71B00FA0373 /* ProfileViewController.swift */,
-				DFA3B3A32AB96A3A00FA0373 /* ImageModel.swift */,
 				DF8EC2FA2AB2DF7100B53EAF /* Assets.xcassets */,
 				DF8EC2FC2AB2DF7100B53EAF /* LaunchScreen.storyboard */,
 				DF8EC2FF2AB2DF7100B53EAF /* Info.plist */,
@@ -172,7 +264,11 @@
 				DF8EC2F32AB2DF7000B53EAF /* ViewController.swift in Sources */,
 				DFA3B3A22AB969D800FA0373 /* CustomImageCollectionViewCell.swift in Sources */,
 				DF8EC2EF2AB2DF7000B53EAF /* AppDelegate.swift in Sources */,
+				DF881D0F2ABCDA8A00B5406C /* ToDoTableViewCell.swift in Sources */,
+				DF881D0C2ABCD79500B5406C /* TaskManager.swift in Sources */,
 				DF8EC2F92AB2DF7000B53EAF /* CoreDataProject.xcdatamodeld in Sources */,
+				DF881D082ABCD1FF00B5406C /* ToDoViewController.swift in Sources */,
+				DF881D0A2ABCD4A300B5406C /* Task.swift in Sources */,
 				DF8EC2F12AB2DF7000B53EAF /* SceneDelegate.swift in Sources */,
 				DF8EC30F2AB3066E00B53EAF /* ProfileDesignViewController.swift in Sources */,
 				DFA3B3A62ABAE71B00FA0373 /* ProfileViewController.swift in Sources */,

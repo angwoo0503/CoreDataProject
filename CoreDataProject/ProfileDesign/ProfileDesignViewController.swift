@@ -42,6 +42,7 @@ class ProfileDesignViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(systemName: "multiply"), for: .normal)
         button.tintColor = .black
+        button.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -446,6 +447,11 @@ class ProfileDesignViewController: UIViewController {
         //        }
     }
     
+    // MARK: - 버튼 메서드
+    @objc func cancelButtonTapped() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 // 데이터 소스 및 델리게이트 메서드 구현
@@ -469,8 +475,6 @@ extension ProfileDesignViewController: UICollectionViewDataSource, UICollectionV
         return cell
     }
 }
-
-
 
 
 
